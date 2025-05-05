@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+    <link
+      rel="icon"
+      type="image/svg"
+      href="./MageLinkedin.svg"
+    />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+      body {
+        font-family: 'Poppins', sans-serif;
+        padding-top: 2rem;
+      }
+
+      .main-section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      .top-header {
+        font-weight: bold;
+        font-size: 2rem;
+        border-bottom: 8px solid #fff;
+        border-bottom-style: dashed;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        text-align: center;
+      }
+
+      .top-header > img {
+        height: 3rem;
+        display: inline-block;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .copy-button {
+        padding: 0.2rem 0.5rem;
+        font-size: 0.8rem;
+        margin-left: 0.5rem;
+        cursor: pointer;
+      }
+
+      .content-wrapper {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      .content-text {
+        flex: 1;
+      }
+
+      .image {
+        width: 100%;
+        margin: 0 auto;
+        border: 8px solid #ffffff32;
+        border-radius: 25px;
+        box-shadow: 5px -5px 20px 0px rgba(0, 0, 0, 0.2);
+      }
+
+      @media only screen and (max-width: 960px) {
+        body {
+          padding-top: 0;
+        }
+
+        .top-header {
+          font-size: 1.6rem;
+        }
+
+        .top-header > img {
+          height: 2.2rem;
+        }
+        .main-section {
+          grid-template-columns: repeat(1, 1fr);
+        }
+
+        .copy-button {
+          display: none;
+        }
+
+        .image {
+          margin-top: 1rem;
+        }
+      }
+
+      @media (prefers-color-scheme: light) {
+        * {
+          background: #eeeeee;
+        }
+      }
+      @media (prefers-color-scheme: dark) {
+        *,
+        label,
+        p {
+          color: white;
+          background: #050212;
+        }
+      }
+    </style>
+    <title>Linkedin Post Generator</title>
+  </head>
+  <body style="max-width: 1200px; margin: 0 auto">
+    <main class="container">
+      <div class="top-header">
+        <img
+          src="https://api.iconify.design/logos:linkedin.svg"
+          alt="linkedin logo"
+        />
+
+        | Post, Tags and Post-Image Generator
+      </div>
+      <div class="main-section">
+        <div>
+          <form id="desc-form">
+            <label for="title">Enter your Post subject here:</label>
+            <input
+              type="text"
+              name="title"
+              id="title"
+              placeholder='"How I built my first website"'
+            />
+            <button type="submit">Create POST and meta-tags</button>
+          </form>
+
+          <div style="margin-top: 20px">
+            <h2 style="font-family: inherit">Description</h2>
+            <div class="content-wrapper">
+              <p class="description content-text">
+                Your description will apper here
+              </p>
+              <button
+                class="copy-button"
+                data-copy="description"
+              >
+                Copy
+              </button>
+            </div>
+            <h2 style="font-family: inherit; margin: 1rem 0">Meta Tags</h2>
+            <div class="content-wrapper">
+              <p class="tags content-text">Your meta tags will apper here</p>
+              <button
+                class="copy-button"
+                data-copy="tags"
+              >
+                Copy
+              </button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <form id="image-form">
+            <label for="title">Enter your image description here:</label>
+            <input
+              type="text"
+              name="title"
+              id="image-input"
+              placeholder='"Monkey in a suit sitting on a chair"'
+            />
+            <button type="submit">Create image</button>
+          </form>
+
+          <img
+            class="image"
+            src="https://placehold.co/1024x1024"
+            alt="image"
+          />
+        </div>
+      </div>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
